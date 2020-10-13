@@ -52,6 +52,7 @@ namespace AI
 			{
                 TranslatesAutoresizingMaskIntoConstraints = false,
                 Date = this.SelectedDateTime.ToNSDate(),
+				PreferredDatePickerStyle = UIDatePickerStyle.Wheels,
                 BackgroundColor = BackgroundColor,
                 Mode = Mode,
                 MinuteInterval = MinuteInterval
@@ -65,7 +66,7 @@ namespace AI
 		    if (MaximumDateTime != null)
 		        datePicker.MaximumDate = MaximumDateTime.Value.ToNSDate();
 #elif __TVOS__
-            var datePicker = new UIControl();
+			var datePicker = new UIControl();
             //TODO: Fake Date picker on tvOS
 #endif
             dimmedView = new UIView(this.View.Bounds)
